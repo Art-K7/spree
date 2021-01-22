@@ -2,10 +2,6 @@
   display: flex;
   flex-direction: column;
 
-  div:first-child {
-    flex-basis: 100%;
-  }
-
   &-order-details {
     padding-bottom: 40px;
     font-weight: 500;
@@ -35,6 +31,9 @@
     }
 
     &-line-items {
+      @include media-breakpoint-down(sm) {
+        flex-basis: 100%;
+      }
       @include media-breakpoint-up(lg) {
         border: none;
         flex: 1 1 0;
