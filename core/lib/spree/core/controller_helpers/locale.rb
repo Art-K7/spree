@@ -24,7 +24,7 @@ module Spree
                                 session[:currency]
                               elsif params[:locale].present? && supported_locale?(params[:locale])
                                 params[:locale]
-                              elsif respond_to?(:config_locale, true)
+                              elsif respond_to?(:config_locale, true) && config_locale.present?
                                 config_locale
                               else
                                 current_store.default_locale || Rails.application.config.i18n.default_locale || I18n.default_locale
